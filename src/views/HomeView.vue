@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import TheWelcome from "../components/TheWelcome.vue"
-</script>
-
 <template>
-  <main class="p-4">
-    <TheWelcome />
+  <main class="prose my-4">
+    <h2>Hello 0.0</h2>
   </main>
 </template>
