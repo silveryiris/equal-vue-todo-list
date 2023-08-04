@@ -13,5 +13,7 @@ test("switch layouts by page route meta", async ({ page }) => {
   await expect(page.locator("#main-layout")).toHaveClass("@container/main drawer")
 
   await page.goto("/about")
-  await expect(page.locator("#default-layout")).toHaveClass("@container/default")
+  await expect(page.locator("#default-layout")).toHaveClass(
+    "@container/default container mx-auto p-4"
+  )
 })
