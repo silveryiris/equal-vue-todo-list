@@ -1,13 +1,10 @@
-name: 🦉 Run unit test
-run-name: 🦉 ${{ github.actor }} is action unit test
+name: 🐱 Run code format and lint
+run-name: 🐱 ${{ github.actor }} is action with format and linter
 on:
   push:
     paths-ignore:
       - "public/**"
       - README.md
-    branches:
-      - master
-      - develop
   pull_request:
     paths-ignore:
       - "public/**"
@@ -15,7 +12,7 @@ on:
     types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
-  Unit-Tests:
+  Format-Lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -23,4 +20,7 @@ jobs:
         with:
           node-version: 18
       - run: npm ci
-      - run: npm run test:unit
+      - name: Code syntax linting
+        run: npm run lint
+      - name: Code formatter checking
+        run: npx prettier --check .
