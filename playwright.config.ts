@@ -13,13 +13,13 @@ import { devices } from "@playwright/test"
 const config: PlaywrightTestConfig = {
   testDir: "./e2e",
   /* Maximum time one test can run for. */
-  timeout: 30 * 1000,
+  timeout: 20 * 1000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in `await expect(locator).toHaveText();`
      */
-    timeout: 5000,
+    timeout: 3000,
   },
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
@@ -66,15 +66,15 @@ const config: PlaywrightTestConfig = {
 
     /* Test against mobile viewports. */
     // {
-    //   name: 'Mobile Chrome',
+    //   name: "Mobile Chrome",
     //   use: {
-    //     ...devices['Pixel 5'],
+    //     ...devices["Pixel 5"],
     //   },
     // },
     // {
-    //   name: 'Mobile Safari',
+    //   name: "Mobile Safari",
     //   use: {
-    //     ...devices['iPhone 12'],
+    //     ...devices["iPhone 12"],
     //   },
     // },
 
