@@ -1,5 +1,5 @@
-name: 🦉 Run e2e test
-run-name: 🦉 ${{ github.actor }} is action e2e test
+name: 🐱 Run code format and lint
+run-name: 🐱 ${{ github.actor }} is action with format and linter
 on:
   push:
     paths-ignore:
@@ -15,21 +15,15 @@ on:
     types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
-  E2E-Tests:
+  Format-Lint:
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.36.2-jammy
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18
       - run: npm ci
-      - run: npm run build
-      - run: HOME=/root npm run test:e2e
-      - uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
+      - name: Code syntax linting
+        run: npm run lint
+      - name: Code formatter checking
+        run: npx prettier --check .
