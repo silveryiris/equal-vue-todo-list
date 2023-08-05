@@ -1,5 +1,5 @@
 name: 🦉 Run e2e test
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: 🦉 ${{ github.actor }} is action e2e test
 on: 
   push:
     branches:
@@ -22,7 +22,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run build
-      - run: npm run test:e2e
+      - run: HOME=/root npm run test:e2e
       - uses: actions/upload-artifact@v3
         if: always()
         with:         
