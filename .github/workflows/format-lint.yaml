@@ -5,6 +5,9 @@ on:
     paths-ignore:
       - "public/**"
       - README.md
+    branches:
+      - master
+      - develop
   pull_request:
     paths-ignore:
       - "public/**"
