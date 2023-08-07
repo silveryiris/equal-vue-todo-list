@@ -5,6 +5,10 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("@tailwindcss/container-queries"),
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+  ],
   darkMode: "class",
 }
