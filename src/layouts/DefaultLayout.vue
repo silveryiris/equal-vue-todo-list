@@ -1,5 +1,5 @@
 <template>
-  <div id="default-layout" class="@container/default container mx-auto p-4">
+  <div id="default-layout" class="container mx-auto p-4 @container/default">
     <HeadNavBar></HeadNavBar>
     <slot></slot>
   </div>
