@@ -27,6 +27,6 @@ const themeStore = useThemeStore()
 const { isDarkTheme } = storeToRefs(themeStore)
 const { switchTheme } = themeStore
 
-const darkStyleClass = ["right-[-5px]", "btn-secondary"]
-const lightStyleClass = ["left-[-5px]", "btn-primary"]
+const darkStyleClass = ["right-[-5px]", "btn-neutral"]
+const lightStyleClass = ["left-[-5px]", "btn-neutral"]
 </script>
