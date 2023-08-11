@@ -10,7 +10,7 @@ test("visits the app root url should be main layout", async ({ page }) => {
 
 test("switch layouts by page route meta", async ({ page }) => {
   await page.goto("/")
-  await expect(page.locator("#main-layout")).toHaveClass("@container/main drawer")
+  await expect(page.locator("#main-layout")).toHaveClass("drawer @container/main")
 
   await page.goto("/about")
   await expect(page.locator("#default-layout")).toHaveClass(
