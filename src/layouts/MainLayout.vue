@@ -1,11 +1,11 @@
 <template>
   <div id="main-layout" class="drawer @container/main">
-    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       <div class="navbar w-full bg-base-300">
         <div class="flex-none lg:hidden">
-          <label for="my-drawer-3" class="btn btn-square btn-ghost">
+          <label for="my-drawer" class="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -36,7 +36,7 @@
       <slot></slot>
     </div>
     <div class="drawer-side">
-      <label for="my-drawer-3" class="drawer-overlay"></label>
+      <label for="my-drawer" class="drawer-overlay"></label>
       <ul class="menu h-full w-80 bg-base-200 p-4">
         <!-- Sidebar content here -->
         <li><a>Sidebar Item 1</a></li>

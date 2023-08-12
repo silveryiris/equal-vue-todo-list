@@ -3,17 +3,23 @@ import { test, expect } from "@playwright/test"
 // See here how to get started:
 // https://playwright.dev/docs/intro
 
-test("visits the app root url should be main layout", async ({ page }) => {
+test("home page top main nav bar should working", async ({ page }) => {
   await page.goto("/")
   await expect(page.locator("#main-layout")).toBeVisible()
-})
+  await expect(page.locator("#main-nav-bar")).toBeVisible()
 
-test("switch layouts by page route meta", async ({ page }) => {
-  await page.goto("/")
-  await expect(page.locator("#main-layout")).toHaveClass("drawer @container/main")
+  await expect(page.getByTitle("home page link")).toHaveText("Home ")
+  await expect(page.getByTitle("home page link")).toHaveAttribute("href", "/")
+  await expect(page.getByTitle("about page link")).toHaveText("About ")
+  await expect(page.getByTitle("about page link")).toHaveAttribute("href", "/about")
 
-  await page.goto("/about")
-  await expect(page.locator("#default-layout")).toHaveClass(
-    "container mx-auto p-4 @container/default"
-  )
+  await page.getByTitle("about page link").click()
+
+  await expect(page).toHaveURL(/.*about/)
+
+  await page.getByTitle("home page link").click()
+
+  await expect(page).toHaveURL("/")
+
+  await expect(page.locator("h1")).toHaveText("Home")
 })
