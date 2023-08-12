@@ -3,7 +3,6 @@
     <template #default>
       <div>
         <component :is="currentLayout" :key="currentLayout ? currentLayout.name : 'nope'">
-          <p>Current layout : {{ currentLayout.name }}</p>
           <RouterView />
         </component>
       </div>

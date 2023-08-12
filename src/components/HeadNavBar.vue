@@ -1,9 +1,9 @@
 <template>
-  <nav class="join">
-    <RouterLink to="/" class="btn btn-secondary btn-sm join-item">
+  <nav id="main-nav-bar" class="join">
+    <RouterLink to="/" class="btn btn-neutral join-item btn-sm" title="home page link">
       <HomeIcon class="h-4 w-4" />Home
     </RouterLink>
-    <RouterLink to="/about" class="btn btn-secondary btn-sm join-item">
+    <RouterLink to="/about" class="btn btn-neutral join-item btn-sm" title="about page link">
       <TrophyIcon class="h-4 w-4" />About
     </RouterLink>
   </nav>
