@@ -79,3 +79,4 @@ npm run lint
 ## Special thanks
 
 - favicon is from `Bootstrap icon` svg and generate by `realfavicongenerator.net` compress by `iloveimg.com`
+- `github` svg icon from `Bootstrap icon`

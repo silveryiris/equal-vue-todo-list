@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="relative h-6 w-10 rounded-3xl border-[0.5px] border-neutral-content bg-base-100 transition"
-    @click="switchTheme"
-  >
+  <div class="relative h-6 w-10 rounded-3xl bg-base-100 transition" @click="switchDarkMode">
     <button
       :class="isDarkTheme ? darkStyleClass : lightStyleClass"
       class="btn btn-circle btn-xs absolute"
@@ -10,8 +7,8 @@
       title="switch theme icon"
     >
       <span>
-        <SunIcon v-show="isDarkTheme" class="h-4 w-4" />
-        <MoonIcon v-show="!isDarkTheme" class="h-4 w-4" />
+        <MoonIcon v-show="isDarkTheme" class="h-4 w-4" />
+        <SunIcon v-show="!isDarkTheme" class="h-4 w-4 text-white" />
       </span>
     </button>
   </div>
@@ -25,8 +22,8 @@ import { storeToRefs } from "pinia"
 const themeStore = useThemeStore()
 
 const { isDarkTheme } = storeToRefs(themeStore)
-const { switchTheme } = themeStore
+const { switchDarkMode } = themeStore
 
 const darkStyleClass = ["right-[-5px]", "btn-neutral"]
-const lightStyleClass = ["left-[-5px]", "btn-neutral"]
+const lightStyleClass = ["left-[-5px]", "btn-success"]
 </script>
