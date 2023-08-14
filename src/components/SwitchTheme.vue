@@ -10,8 +10,8 @@
       title="switch theme icon"
     >
       <span>
-        <SunIcon v-show="isDarkTheme" class="h-4 w-4" />
-        <MoonIcon v-show="!isDarkTheme" class="h-4 w-4" />
+        <MoonIcon v-show="isDarkTheme" class="h-4 w-4" />
+        <SunIcon v-show="!isDarkTheme" class="h-4 w-4 text-white" />
       </span>
     </button>
   </div>
@@ -28,5 +28,5 @@ const { isDarkTheme } = storeToRefs(themeStore)
 const { switchTheme } = themeStore
 
 const darkStyleClass = ["right-[-5px]", "btn-neutral"]
-const lightStyleClass = ["left-[-5px]", "btn-neutral"]
+const lightStyleClass = ["left-[-5px]", "btn-success"]
 </script>
