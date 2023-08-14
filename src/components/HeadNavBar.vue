@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import { HomeIcon, TrophyIcon } from "@heroicons/vue/20/solid"
+import { HomeIcon, TrophyIcon } from "@heroicons/vue/24/solid"
 </script>

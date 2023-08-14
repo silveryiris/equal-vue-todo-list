@@ -19,7 +19,7 @@ export const useThemeStore = defineStore("theme", () => {
     themeStorage.value.isSaved = true
   }
 
-  const switchTheme = () => {
+  const switchDarkMode = () => {
     themeStorage.value.isDarkTheme = !themeStorage.value.isDarkTheme
 
     updateDataTheme()
@@ -36,5 +36,5 @@ export const useThemeStore = defineStore("theme", () => {
     if (body) body.dataset.theme = theme
   }
 
-  return { isDefaultDarkTheme, themeStorage, switchTheme, updateDataTheme, isDarkTheme }
+  return { isDefaultDarkTheme, themeStorage, switchDarkMode, updateDataTheme, isDarkTheme }
 })
