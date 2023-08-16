@@ -10,7 +10,7 @@ const router = createRouter({
 })
 
 describe("HeadNavBar", () => {
-  it("home page header bar renders properly", async () => {
+  it("matches header nav bar i18n key properly 🧋", async () => {
     router.push("/")
 
     await router.isReady()
@@ -32,10 +32,10 @@ describe("HeadNavBar", () => {
 
     // first link
     expect(links[0].attributes().href).toEqual("/")
-    expect(links[0].text()).toEqual("Home")
+    expect(links[0].text()).toEqual("home-page")
 
     // second link
     expect(links[1].attributes().href).toEqual("/about")
-    expect(links[1].text()).toEqual("About")
+    expect(links[1].text()).toEqual("about-page")
   })
 })

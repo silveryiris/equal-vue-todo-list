@@ -18,11 +18,12 @@
         <div class="hidden md:block">
           <ul class="menu menu-horizontal">
             <!-- Navbar menu content here -->
-            <li>
+            <li class="mr-2 justify-center"><HeadNavBar class="gap-0 p-0" /></li>
+            <li class="mr-2">
               <a :href="projectSourceLink"><GithubIcon class="h-4 w-4" /></a>
             </li>
-            <li class="mx-2 justify-center"><HeadNavBar class="gap-0 p-0" /></li>
-            <li class="justify-center"><SwitchDarkMode class="mx-2 gap-0 p-0" /></li>
+            <li class="mr-2 justify-center"><DropdownLocale /></li>
+            <li class="mr-2 justify-center"><SwitchDarkMode /></li>
           </ul>
         </div>
       </div>
@@ -38,7 +39,7 @@
           <div class="flex">
             <a class="flex" :href="projectSourceLink">
               <GithubIcon class="mr-2 h-5 w-5" alt="github icon" />
-              <span class="text-accent">Project link</span>
+              <span class="text-accent">{{ t("project-link") }}</span>
             </a>
           </div>
         </li>
@@ -48,13 +49,13 @@
         <li class="text-lg">
           <RouterLink to="/" title="side home link">
             <HomeIcon class="mr-4 h-4 w-4" />
-            Home
+            {{ t("home-page") }}
           </RouterLink>
         </li>
         <li class="text-lg">
           <RouterLink to="about" title="side about link">
             <TrophyIcon class="mr-4 h-4 w-4" />
-            About
+            {{ t("about-page") }}
           </RouterLink>
         </li>
         <li class="mt-auto" title="bottom dark mode switch"><SwitchDarkMode /></li>
@@ -70,6 +71,9 @@ import SwitchDarkMode from "@/components/SwitchDarkMode.vue"
 import { useSiteStore } from "@/stores/site"
 import SiteLogoIcon from "@/assets/icons/site-logo.svg"
 import GithubIcon from "@/assets/icons/github.svg"
+import DropdownLocale from "@/components/DropdownLocale.vue"
+import { useI18n } from "vue-i18n"
 
 const { navBarTitle, projectSourceLink } = useSiteStore()
+const { t } = useI18n()
 </script>
