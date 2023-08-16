@@ -10,20 +10,20 @@ This template should help get you started developing with Vue 3 in Vite.
 
 ## Features
 
-### CSS and layout
+### Layout and CSS
 
 - `tailwindcss` with `container-queries` and `typography`
 - `daisyui`
 
-### font
+### Font
 
 - `fontsource`
 
-### icon
+### Icon
 
 - `heroicons`
 
-### state management
+### State management
 
 - `pinia`
 
