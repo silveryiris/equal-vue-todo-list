@@ -1,16 +1,16 @@
-### CSS and layout
+### Layout and CSS
 
 - `tailwindcss` with `container-queries` and `typography`
 - `daisyui`
 
-### font
+### Font
 
 - `fontsource`
 
-### icon
+### Icon
 
 - `heroicons`
 
-### state management
+### State management
 
 - `pinia`

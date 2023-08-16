@@ -3,10 +3,7 @@
     <div class="hero-content text-center">
       <div class="max-w-md">
         <h1 class="text-5xl font-bold">{{ t("home-page") }}</h1>
-        <p class="py-6">
-          Lorem ipsum sollicitudin malesuada tellus potenti quisque vel imperdiet, justo lobortis
-          habitasse fringilla fames ornare per, conubia neque potenti dui faucibus netus fames.
-        </p>
+        <component class="prose py-12 text-left" :is="Features" />
         <button class="btn btn-primary">{{ t("hello") }}</button>
       </div>
     </div>
@@ -14,7 +11,14 @@
 </template>
 
 <script setup lang="ts">
+import { defineAsyncComponent, computed } from "vue"
 import { useI18n } from "vue-i18n"
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
+
+const Features = computed(() =>
+  locale.value
+    ? defineAsyncComponent(() => import(`@/contents/home/features.${locale.value}.md`))
+    : null
+)
 </script>
