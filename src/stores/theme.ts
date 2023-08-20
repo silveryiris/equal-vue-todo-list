@@ -2,11 +2,13 @@ import { defineStore } from "pinia"
 import { useStorage, usePreferredDark } from "@vueuse/core"
 import { computed } from "vue"
 
+export type DefaultThemeSettings = { isDarkTheme: Boolean; isSaved: Boolean }
+
 export const useThemeStore = defineStore("theme", () => {
   const isDefaultDarkTheme = usePreferredDark()
 
   // Load default local saved settings，isSaved false will initial settings
-  const theDefault = { isDarkTheme: true, isSaved: false }
+  const theDefault: DefaultThemeSettings = { isDarkTheme: true, isSaved: false }
 
   const themeStorage = useStorage("theme", theDefault)
 
