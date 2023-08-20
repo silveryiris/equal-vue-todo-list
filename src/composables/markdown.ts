@@ -1,6 +1,7 @@
 import { computed, defineAsyncComponent } from "vue"
 import type { Ref } from "vue"
 
+// https://vitejs.dev/guide/features.html#glob-import
 const loadMarkdownComponent = (locale: Ref<String>, filePath: string) => {
   const modules: any = import.meta.glob(["@/contents/**/*.md"])
 

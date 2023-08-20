@@ -29,6 +29,11 @@ export const useLocaleStore = defineStore("locale", () => {
     localeStorage.value.locale = code
     // Sync with vue-i18n
     locale.value = code
+
+    // Update HTML lang
+    const lang = isoCodeMap.get(code) || "en"
+
+    document.querySelector("html")?.setAttribute("lang", lang)
   }
 
   // Startup sync with vue-i18n
