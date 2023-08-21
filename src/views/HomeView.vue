@@ -11,14 +11,11 @@
 </template>
 
 <script setup lang="ts">
-import { defineAsyncComponent, computed } from "vue"
 import { useI18n } from "vue-i18n"
+import { useMarkdown } from "@/composables/markdown"
 
 const { t, locale } = useI18n()
+const { loadMarkdownComponent } = useMarkdown()
 
-const Features = computed(() =>
-  locale.value
-    ? defineAsyncComponent(() => import(`@/contents/home/features.${locale.value}.md`))
-    : null
-)
+const Features = loadMarkdownComponent(locale, "home/features")
 </script>

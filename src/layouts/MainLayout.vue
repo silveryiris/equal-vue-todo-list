@@ -1,6 +1,6 @@
 <template>
   <div id="main-layout" class="drawer @container/main">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <input v-model="drawerToggle" id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content flex flex-col">
       <!-- Navbar -->
       <div class="navbar w-full bg-base-300">
@@ -58,13 +58,19 @@
             {{ t("about-page") }}
           </RouterLink>
         </li>
-        <li class="mt-auto" title="bottom dark mode switch"><SwitchDarkMode /></li>
+
+        <div class="mt-auto grid grid-cols-2 items-center">
+          <SwitchDarkMode title="dark mode switch" />
+
+          <DropdownLocale :dropdown-position="localeDropdownPosition" title="language select" />
+        </div>
       </ul>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, watchEffect } from "vue"
 import { Bars3Icon, HomeIcon, TrophyIcon } from "@heroicons/vue/24/solid"
 import HeadNavBar from "@/components/HeadNavBar.vue"
 import SwitchDarkMode from "@/components/SwitchDarkMode.vue"
@@ -72,8 +78,24 @@ import { useSiteStore } from "@/stores/site"
 import SiteLogoIcon from "@/assets/icons/site-logo.svg"
 import GithubIcon from "@/assets/icons/github.svg"
 import DropdownLocale from "@/components/DropdownLocale.vue"
+import type { DropdownPosition } from "@/components/DropdownLocale.vue"
 import { useI18n } from "vue-i18n"
 
 const { navBarTitle, projectSourceLink } = useSiteStore()
 const { t } = useI18n()
+
+const localeDropdownPosition = ["top", "end"] as DropdownPosition[]
+
+const drawerToggle = ref(false)
+
+// Fix side menu overlay background element scroll
+watchEffect(() => {
+  const body = document.querySelector("body")
+
+  if (drawerToggle.value === true) {
+    body?.setAttribute("style", "overflow:hidden")
+  } else {
+    body?.removeAttribute("style")
+  }
+})
 </script>
