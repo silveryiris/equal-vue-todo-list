@@ -1,5 +1,5 @@
 <template>
-  <div class="dropdown dropdown-end m-0 p-0">
+  <div :class="dropdownPositionStyle" class="dropdown m-0 p-0">
     <label tabindex="0" class="btn btn-ghost rounded-btn btn-sm">
       <LanguageIcon class="h-4 w-4" />
     </label>
@@ -18,9 +18,19 @@
 </template>
 
 <script setup lang="ts">
+import { computed, type PropType } from "vue"
 import { LanguageIcon } from "@heroicons/vue/24/outline"
-
 import { useLocaleStore } from "@/stores/locale"
 
 const { changeLocale } = useLocaleStore()
+
+export type DropdownPosition = "end" | "top" | "bottom" | "left" | "right"
+
+const props = defineProps({
+  dropdownPosition: { type: Array as PropType<DropdownPosition[]>, default: () => ["end"] },
+})
+
+const { dropdownPosition } = props
+
+const dropdownPositionStyle = computed(() => dropdownPosition.map((x) => `dropdown-${x}`))
 </script>
