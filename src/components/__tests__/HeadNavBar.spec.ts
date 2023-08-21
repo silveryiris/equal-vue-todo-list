@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest"
+import { describe, it, expect, vi } from "vitest"
 import { mount } from "@vue/test-utils"
 import { createRouter, createWebHistory } from "vue-router"
 import HeadNavBar from "../HeadNavBar.vue"
@@ -8,6 +8,10 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 })
+
+vi.mock("vue-i18n", () => ({
+  useI18n: () => ({ t: (key: string) => key }),
+}))
 
 describe("HeadNavBar", () => {
   it("matches header nav bar i18n key properly 🧋", async () => {
