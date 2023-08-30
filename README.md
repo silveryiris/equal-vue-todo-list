@@ -16,6 +16,8 @@ This **template** have integrated some common purpose packages to help you start
 
 - [daisyui](https://daisyui.com/)
 
+- Simple but effective layout switch system, could define one layout per route.
+
 ### 🆒 Font
 
 - [fontsource inter font](https://fontsource.org/fonts/inter)
