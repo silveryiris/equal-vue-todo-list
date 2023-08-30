@@ -1,36 +1,71 @@
-# verbena-vue-template
+# Verbena vue template
 
-<img src="public/favicon.svg" width="200"/>
+<img src="public/favicon.svg" width="250"/>
 
-This template should help get you started developing with Vue 3 in Vite.
+This **template** have integrated some common purpose packages to help you start developing `Vue 3` project with `typescript`.
 
-## Recommended IDE Setup
+## ⚙️ Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-## Features
+## 🚀 Features
 
-### Layout and CSS
+### 💠 Layout and CSS
 
-- `tailwindcss` with `container-queries` and `typography`
-- `daisyui`
+- [tailwindcss](https://tailwindcss.com/) with [container-queries](https://github.com/tailwindlabs/tailwindcss-container-queries) and [typography](https://tailwindcss.com/docs/typography-plugin)
 
-### Font
+- [daisyui](https://daisyui.com/)
 
-- `fontsource`
+### 🆒 Font
 
-### Icon
+- [fontsource inter font](https://fontsource.org/fonts/inter)
 
-- `heroicons`
+### 💥 Icon
 
-### State management
+- [heroicons](https://heroicons.com/)
 
-- `pinia`
+### 🍍 State management
 
-## Project Setup
+- [pinia](https://pinia.vuejs.org/)
+
+### 🌏 Locale
+
+- [vue-i18n](https://vue-i18n.intlify.dev/)
+
+### 🧭 Utility
+
+- [vueuse](https://vueuse.org/)
+
+### 🦅 Testing
+
+- E2e test - [playwright](https://playwright.dev/)
+
+- Unit test - [vitest](https://vitest.dev/) + [vue/test-utils](https://test-utils.vuejs.org/guide/)
+
+- Unit test coverage report - `vitest/coverage-v8`
+
+### 🚎 Component loader
+
+- `svg` - [vite-svg-loader](https://github.com/jpkleemans/vite-svg-loader)
+
+- `markdown` - [unplugin-vue-markdown](https://github.com/unplugin/unplugin-vue-markdown)
+
+```js
+// Markdown files default load location `src/contents/**`
+```
+
+### 🤖 Github CI actions
+
+- Unit test
+
+- E2e test
+
+- Coding format and lint check
+
+## ⚡ Project Setup
 
 ```sh
-npm ci
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
@@ -45,13 +80,19 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Run Unit Tests with `Vitest`
 
 ```sh
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+### Run Unit Tests with `Vitest` and view test coverage report
+
+```sh
+npm run test:unit:coverage
+```
+
+### Run End-to-End Tests with `Playwright`
 
 ```sh
 # Install browsers for the first run
@@ -76,7 +117,18 @@ npm run test:e2e -- --debug
 npm run lint
 ```
 
-## Special thanks
+### Format coding style with [Prettier](https://prettier.io/)
 
-- favicon is from `Bootstrap icon` svg and generate by `realfavicongenerator.net` compress by `iloveimg.com`
-- `github` svg icon from `Bootstrap icon`
+```sh
+npm run format
+```
+
+## 🖋️ Note
+
+- Favicon <img src="src/assets/icons/site-logo.svg" width="25"/> and `github` icon <img src="src/assets/icons/github.svg" width="25"/> is from [Bootstrap](https://icons.getbootstrap.com/)
+
+- Favicon <img src="src/assets/icons/site-logo.svg" width="25"/> svg file generate by `realfavicongenerator.net` compress by `iloveimg.com`
+
+## 🗒️ License
+
+[MIT License](https://github.com/silveryiris/verbena-vue-template/blob/master/LICENSE) © 2023-PRESENT [Wen Wei , Chang](https://github.com/silveryiris)
